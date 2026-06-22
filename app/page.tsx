@@ -147,11 +147,11 @@ export default function BkashAgentFinder() {
 
           {loading && (
             <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm animate-pulse space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-20 h-20 bg-slate-200 rounded-2xl shrink-0"></div>
-                <div className="flex-1 space-y-3">
-                  <div className="h-6 bg-slate-200 rounded-xl w-3/4"></div>
+              <div className="flex items-start gap-4">
+                <div className="w-28 h-28 bg-slate-200 rounded-2xl shrink-0"></div>
+                <div className="flex-1 space-y-3 pt-2">
                   <div className="h-4 bg-slate-200 rounded-xl w-1/3"></div>
+                  <div className="h-6 bg-slate-200 rounded-xl w-3/4"></div>
                 </div>
               </div>
               <div className="space-y-3 pt-2">
@@ -164,10 +164,10 @@ export default function BkashAgentFinder() {
           {agent && !loading && (
             <div className="bg-white rounded-3xl p-6 shadow-xl shadow-slate-200/70 border border-slate-100 space-y-6">
               
-              {/* User-Friendly Identity Header Row */}
-              <div className="flex items-start gap-4">
-                {/* Scaled-down, beautifully framed micro-preview */}
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-slate-50 border-2 border-white ring-4 ring-pink-50 shadow-inner shrink-0">
+              {/* Identity Header Row with Enhanced Friendly Image */}
+              <div className="flex items-start gap-5">
+                {/* Bigger and much more visible image display frame */}
+                <div className="relative w-28 h-28 rounded-2xl overflow-hidden bg-slate-50 border border-slate-100 ring-4 ring-pink-50/70 shadow-md shrink-0 transition-transform hover:scale-105 duration-200">
                   <img
                     src={agent.imageUrl}
                     alt={agent.name}
@@ -178,11 +178,11 @@ export default function BkashAgentFinder() {
                   />
                 </div>
                 
-                {/* Dynamic Title and Live Badge placement */}
-                <div className="space-y-1.5 flex-1 min-w-0">
+                {/* Right context info matching the larger thumbnail height */}
+                <div className="space-y-2 flex-1 min-w-0 pt-1">
                   <div className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-2.5 py-0.5 rounded-xl text-[10px] font-bold text-emerald-700">
                     <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                    Authorized
+                    Authorized Agent
                   </div>
                   <h2 className="text-xl font-bold tracking-tight text-slate-900 leading-snug break-words">
                     {agent.name}
@@ -201,10 +201,10 @@ export default function BkashAgentFinder() {
                 </div>
                 <button
                   onClick={() => copyToClipboard(agent.number.replace(/\s/g, ''))}
-                  className="p-3 hover:bg-white border border-transparent hover:border-slate-100 rounded-xl transition-all shadow-sm bg-white sm:bg-transparent"
+                  className="p-3 bg-white hover:bg-slate-50 border border-slate-100 rounded-xl transition-all shadow-sm active:scale-95"
                   title="Copy Number"
                 >
-                  {copied ? <Check className="text-emerald-500" size={20} /> : <Copy size={20} />}
+                  {copied ? <Check className="text-emerald-500" size={20} /> : <Copy className="text-slate-500" size={20} />}
                 </button>
               </div>
 
