@@ -13,7 +13,7 @@ interface AgentData {
 }
 
 export default function BkashAgentFinder() {
-  const [searchQuery, setSearchQuery] = useState<string>('01403051840');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [agent, setAgent] = useState<AgentData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +47,7 @@ export default function BkashAgentFinder() {
     }
 
     if (!targetGid) {
-      setError('Invalid agent number or link');
+      setError('Invalid agent number');
       return;
     }
 
@@ -112,7 +112,7 @@ export default function BkashAgentFinder() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Agent number or gid link"
+                placeholder="Agent number"
                 className="w-full pl-14 pr-5 py-4 bg-transparent focus:outline-none text-base placeholder:text-slate-400"
               />
             </div>
