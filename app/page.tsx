@@ -110,6 +110,8 @@ export default function BkashAgentFinder() {
               <Search size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Agent number"
